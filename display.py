@@ -1,9 +1,11 @@
-class Display:
-    def telaConfig():
+import turtle
+class Display():
+    def telaConfig(self):
+        window = turtle.Screen()
         window.title("Space Invaders - Robson")
-        window.bgpic("loop.gif")
+        window.bgpic("src/background.gif")
 
-    def desenharBorda():
+    def desenharBorda(self):
         # Desenhar a borda
         border_pen = turtle.Turtle()
         border_pen.speed(10)
@@ -18,7 +20,7 @@ class Display:
             border_pen.lt(90)
         border_pen.hideturtle()
 
-    def placarScore():
+    def placarScore(self):
         score = 0
         # Desenhar a pontuação
         score_pen = turtle.Turtle()

@@ -1,7 +1,7 @@
-class Player:
+class Player():
     # Função que inicializa e configura o player
-    def configPlayer():
-        turtle.register_shape("player (1).gif")
+    def configPlayer(self):
+        turtle.register_shape("src/player.gif")
 
         # Criar a tartaruga do jogador
         player = turtle.Turtle()
@@ -13,7 +13,7 @@ class Player:
 
         playerspeed = 15
     # Função para mover o jogador para a esquerda
-    def mover_esquerda():
+    def mover_esquerda(self):
         x = player.xcor()
         if x >= -250:
             x -= playerspeed
@@ -21,7 +21,7 @@ class Player:
         fogo.setx(x)
         
     # Função para mover o jogador para a direita
-    def mover_direita():
+    def mover_direita(self):
         x = player.xcor()
         if x <= 250:
             x += playerspeed

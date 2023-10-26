@@ -1,18 +1,21 @@
 import turtle
 import random
 import time
-import player
-import display
-import enemy
-import fire
-
-# Configurar a janela do jogo
-window = turtle.Screen()
+from player import Player
+from display import Display
+from enemy import Enemy
+from fire import Fire
 
 # Instancia das classes
-jogador = player()
+jogador = Player()
+visor = Display()
+fogo = Fire()
+inimigo = Enemy()
 
-
+#Inicialização do visor
+visor.telaConfig()
+visor.desenharBorda()
+visor.placarScore()
 
 # Configurar os ouvintes de eventos do teclado
 turtle.listen()
