@@ -5,7 +5,7 @@ class Player():
 
         # Criar a tartaruga do jogador
         player = turtle.Turtle()
-        player.shape("player (1).gif")
+        player.shape("src/player.gif")
         player.penup()
         player.speed(0)
         player.setposition(0, -250)
