@@ -2,18 +2,19 @@ import turtle
 import time
 
 class Player():
-    def __init__(self):
+    def __init__(self, nave):
         self.playerspeed = 15
 
         # Configurar o jogador
-        turtle.register_shape("src/nave-player.gif")
         self.player = turtle.Turtle()
-        self.player.shape("src/nave-player.gif")
         self.player.penup()
         self.player.speed(0)
         self.player.setposition(0, -250)
         self.player.setheading(90)
-        
+    def configPlayer(self, nave):
+        turtle.register_shape(nave)
+        player.shape(nave)
+    
     # Configuração do projétil disparado pelo jogador
     def configFogo(self):
         self.fogo = turtle.Turtle()

@@ -1,9 +1,9 @@
 import turtle
 class Display():
-    def telaConfig(self):
+    def telaConfig(self, background):
         window = turtle.Screen()
         window.title("Space Invaders - Robson")
-        window.bgpic("src/background.gif")
+        window.bgpic(background)
 
     def desenharBorda(self):
         # Desenhar a borda
@@ -26,7 +26,7 @@ class Display():
         score_pen = turtle.Turtle()
         score_pen.speed(0)
         score_pen.color("red")
-        score_pen.penup()
+        score_pen.penup()   
         score_pen.setposition(-290, 280)
         scorestring = "SCORE: %s" % score
         score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))

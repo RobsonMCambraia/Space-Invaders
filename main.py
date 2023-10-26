@@ -11,7 +11,7 @@ visor = Display()
 inimigo = Enemy()
 
 #Inicialização do visor
-visor.telaConfig()
+visor.telaConfig("src/background.gif")
 visor.desenharBorda()
 visor.placarScore()
 
@@ -20,7 +20,7 @@ jogador.configFogo()
 
 #Inicialização dos inimigos
 inimigo.enemyListAppend()
-inimigo.enemyConfig()
+inimigo.enemyConfig("src/inimigo-1.gif", "src/inimigo-2.gif")
 inimigo.enemyMove()
 
 # Configurar os ouvintes de eventos do teclado

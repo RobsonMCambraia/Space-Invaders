@@ -15,14 +15,14 @@ class Enemy():
         for i in range(self.number_of_enemies2):
             self.enemies2.append(turtle.Turtle())
     
-    def enemyConfig(self):
+    def enemyConfig(self, inimigo1, inimigo2):
         # Registrar as formas
-        turtle.register_shape("src/inimigo-1.gif")
-        turtle.register_shape("src/inimigo-2.gif")
+        turtle.register_shape(inimigo1)
+        turtle.register_shape(inimigo2)
         
         # Configuração dos inimigos
         for enemy1 in self.enemies1:
-            enemy1.shape("src/inimigo-1.gif")
+            enemy1.shape(inimigo1)
             enemy1.penup()
             enemy1.speed(0)
             x = random.randint(-200, 200)
@@ -30,7 +30,7 @@ class Enemy():
             enemy1.setposition(x, y)
             
         for enemy2 in self.enemies2:
-            enemy2.shape("src/inimigo-2.gif")
+            enemy2.shape(inimigo2)
             enemy2.penup()
             enemy2.speed(0)
             x = random.randint(-200, 200)
