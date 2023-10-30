@@ -5,7 +5,9 @@ class Player():
     def __init__(self, fogo, player):
         self.fogo = turtle.Turtle()
         self.player = turtle.Turtle()
-
+        
+        self.playerspeed = 15
+        self.fogospeed = 30
         self.configuração_fogo = fogo
         self.configuração_player = player
         
@@ -21,8 +23,6 @@ class Player():
         player.setposition(self.configuração_player["position_x"], self.configuração_player["position_y"])
         player.setheading(self.configuração_player["heading"])
         
-        playerspeed = 15
-
     # Configuração do projétil disparado pelo jogador
     def configFogo(self):
         fogo = self.fogo
@@ -33,9 +33,7 @@ class Player():
         fogo.setheading(self.configuração_fogo["heading"])
         fogo.shapesize(self.configuração_fogo["shape_size_x"], self.configuração_fogo["shape_size_y"])
         fogo.setposition(self.configuração_fogo["position_x"], self.configuração_fogo["position_y"])
-        
-        fogospeed = 30
-        
+            
     # Função para mover o projétil disparado pelo jogador
     def mover_fogo(self):
         y = self.fogo.ycor()

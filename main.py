@@ -34,6 +34,7 @@ fogo = {
     "shape_size_x": 0.5,
     "shape_size_y": 0.5,
     "heading": 90}
+
 player = {
     "speed": 0,
     "position_x": 0,
@@ -42,8 +43,6 @@ player = {
     "heading": 90}
     
 jogador = Player(fogo, player)
-
-
 inimigo = Enemy()
 
 turtle.listen()
