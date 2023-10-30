@@ -8,6 +8,7 @@ class Player():
         
         self.playerspeed = 15
         self.fogospeed = 30
+        
         self.configuração_fogo = fogo
         self.configuração_player = player
         
