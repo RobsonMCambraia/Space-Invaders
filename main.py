@@ -14,13 +14,12 @@ border_settings = {
     "size": 3}
 
 placar_score = {
-    "speed": 10,
-    "color": "white",
-    "position_x": -300,
-    "position_y": -300,
-    "size": 3}
+    "speed": 0,
+    "color": "red",
+    "position_x": -290,
+    "position_y": 280}
 
-display = Display(border_settings)
+display = Display(border_settings, placar_score)
 
 window = turtle.Screen()
 window.title("Space Invaders - Robson")

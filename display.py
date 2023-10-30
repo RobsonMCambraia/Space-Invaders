@@ -24,13 +24,12 @@ class Display():
         border_pen.hideturtle()
 
     def placarScore(self):
-        score = 0
-        # Desenhar a pontuação
         score_pen = turtle.Turtle()
-        score_pen.speed(0)
-        score_pen.color("red")
+        score = 0
+        score_pen.speed(self.placar_setup["speed"])
+        score_pen.color(self.placar_setup["color"])
         score_pen.penup()   
-        score_pen.setposition(-290, 280)
+        score_pen.setposition(self.placar_setup["position_x"], self.placar_setup["position_y"])
         scorestring = "SCORE: %s" % score
         score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
         score_pen.hideturtle()
