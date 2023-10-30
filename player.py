@@ -2,31 +2,39 @@ import turtle
 import time
 
 class Player():
-    def __init__(self):
-        self.playerspeed = 15
-
-        # Configurar o jogador
+    def __init__(self, fogo, player):
+        self.fogo = turtle.Turtle()
         self.player = turtle.Turtle()
-        self.player.penup()
-        self.player.speed(0)
-        self.player.setposition(0, -250)
-        self.player.setheading(90)
+
+        self.configuração_fogo = fogo
+        self.configuração_player = player
         
-    def configPlayer(self, nave):
-        turtle.register_shape(nave)
-        player.shape(nave)
-    
+        self.configPlayer()
+        self.configFogo()
+        
+    def configPlayer(self):
+        player = self.player                
+        turtle.register_shape(self.configuração_player["caminho_shape"])
+        player.shape(self.configuração_player["caminho_shape"])
+        player.penup()
+        player.speed(self.configuração_player["speed"])
+        player.setposition(self.configuração_player["position_x"], self.configuração_player["position_y"])
+        player.setheading(self.configuração_player["heading"])
+        
+        playerspeed = 15
+
     # Configuração do projétil disparado pelo jogador
     def configFogo(self):
-        self.fogo = turtle.Turtle()
-        self.fogo.color("dark orange")
-        self.fogo.shape("triangle")
-        self.fogo.penup()
-        self.fogo.speed(0.1)
-        self.fogo.setheading(90)
-        self.fogo.shapesize(0.5, 0.5)
-        self.fogo.setposition(0, -235)
-        self.fogospeed = 30
+        fogo = self.fogo
+        fogo.color(self.configuração_fogo["color"])
+        fogo.shape(self.configuração_fogo["shape"])
+        fogo.penup()
+        fogo.speed(self.configuração_fogo["speed"])
+        fogo.setheading(self.configuração_fogo["heading"])
+        fogo.shapesize(self.configuração_fogo["shape_size_x"], self.configuração_fogo["shape_size_y"])
+        fogo.setposition(self.configuração_fogo["position_x"], self.configuração_fogo["position_y"])
+        
+        fogospeed = 30
         
     # Função para mover o projétil disparado pelo jogador
     def mover_fogo(self):

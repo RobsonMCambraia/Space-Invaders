@@ -25,12 +25,28 @@ window = turtle.Screen()
 window.title("Space Invaders - Robson")
 window.bgpic("src/background.gif")
 
-# Instancia das classes
-jogador = Player()
+fogo = {
+    "speed": 0.1,
+    "color": "dark orange",
+    "position_x": 0,
+    "position_y": -235,
+    "shape": "triangle",
+    "shape_size_x": 0.5,
+    "shape_size_y": 0.5,
+    "heading": 90}
+player = {
+    "speed": 0,
+    "position_x": 0,
+    "position_y": -250,
+    "caminho_shape": "src/nave-player.gif",
+    "heading": 90}
+    
+jogador = Player(fogo, player)
+
+
 inimigo = Enemy()
 
 turtle.listen()
-jogador.configFogo()
 
 #Inicialização dos inimigos
 inimigo.enemyListAppend()
