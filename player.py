@@ -2,7 +2,7 @@ import turtle
 import time
 
 class Player():
-    def __init__(self, nave):
+    def __init__(self):
         self.playerspeed = 15
 
         # Configurar o jogador
@@ -11,6 +11,7 @@ class Player():
         self.player.speed(0)
         self.player.setposition(0, -250)
         self.player.setheading(90)
+        
     def configPlayer(self, nave):
         turtle.register_shape(nave)
         player.shape(nave)
