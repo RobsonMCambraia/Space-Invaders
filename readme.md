@@ -6,7 +6,6 @@
 O Space Invaders é um projeto de jogo desenvolvido em Python inspirado no clássico Space Invaders. Este jogo permite que você controle uma nave espacial e atire em inimigos em movimento enquanto tenta evitar suas investidas.
 
 ## Capturas de Tela
-* Inclua capturas de tela do seu jogo em ação para dar aos usuários uma prévia visual.
 
 ![Screenshot 1](link_para_screenshot_1)
 ![Screenshot 2](link_para_screenshot_2)
