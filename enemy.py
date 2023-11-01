@@ -16,7 +16,7 @@ class Enemy():
         self.enemies2 = []
         self.enemies3 = []
         
-        # Configura e inicia a criação dos inimigos
+        # Inicia a criação dos inimigos
         self.number_of_enemies()
         self.enemyListAppend()
         self.enemyConfig()

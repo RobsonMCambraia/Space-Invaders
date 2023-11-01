@@ -3,20 +3,27 @@ import time
 
 class Player():
     def __init__(self, fogo, player):
+        # Inicializa as tartarugas do jogador e do projétil
         self.fogo = turtle.Turtle()
         self.player = turtle.Turtle()
         
+        # Velocidades para o jogador e o projétil
         self.playerspeed = 15
         self.fogospeed = 30
         
+        # Recebe as configurações para o jogador e o projétil
         self.configuração_fogo = fogo
         self.configuração_player = player
         
+        # Configura a aparência do jogador
         self.configPlayer()
+        # Configura a aparência e posição inicial do projétil
         self.configFogo()
         
     def configPlayer(self):
-        player = self.player                
+        # Configura a aparência do jogador
+        player = self.player
+        # Registra a forma do jogador no Turtle
         turtle.register_shape(self.configuração_player["caminho_shape"])
         player.shape(self.configuração_player["caminho_shape"])
         player.penup()
@@ -26,6 +33,7 @@ class Player():
         
     # Configuração do projétil disparado pelo jogador
     def configFogo(self):
+        # Configura a aparência do projétil
         fogo = self.fogo
         fogo.color(self.configuração_fogo["color"])
         fogo.shape(self.configuração_fogo["shape"])
