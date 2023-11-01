@@ -1,28 +1,35 @@
 import turtle
 import random
+
 class Enemy():
     def __init__(self, dict_enemy_1, dict_enemy_2, dict_enemy_3):
+        # Recebe configurações para três tipos de inimigos
         self.config_enemy_1 = dict_enemy_1 
         self.config_enemy_2 = dict_enemy_2 
         self.config_enemy_3 = dict_enemy_3 
         
+        # Velocidade padrão dos inimigos
         self.enemyspeed = 5
+        
+        # Listas para armazenar tartarugas de diferentes tipos de inimigos
         self.enemies1 = []
         self.enemies2 = []
         self.enemies3 = []
         
+        # Configura e inicia a criação dos inimigos
         self.number_of_enemies()
         self.enemyListAppend()
         self.enemyConfig()
         self.enemyMove()
         
     def number_of_enemies(self):
+        # Define a quantidade de inimigos para cada tipo com base nas configurações
         self.number_of_enemies1 = self.config_enemy_1["quantidade"]
         self.number_of_enemies2 = self.config_enemy_2["quantidade"]
         self.number_of_enemies3 = self.config_enemy_3["quantidade"]
         
     def enemyListAppend(self):
-        # Adicionar inimigos à lista
+        # Cria tartarugas para os inimigos e as armazena nas listas apropriadas
         for i in range(self.number_of_enemies1):
             self.enemies1.append(turtle.Turtle())
         for i in range(self.number_of_enemies2):
@@ -31,7 +38,7 @@ class Enemy():
             self.enemies3.append(turtle.Turtle())
     
     def enemyConfig(self):
-        # Registrar as formas
+        # Registra as formas dos inimigos no Turtle
         turtle.register_shape(self.config_enemy_1["caminho_shape"])
         turtle.register_shape(self.config_enemy_2["caminho_shape"])
         turtle.register_shape(self.config_enemy_3["caminho_shape"])
@@ -62,12 +69,13 @@ class Enemy():
             enemy3.setposition(x, y)
         
     def enemyMove(self):
+        # Move os inimigos horizontalmente
         for enemy1 in self.enemies1:
             x = enemy1.xcor()
             x += self.enemyspeed
             enemy1.setx(x)
 
-            # Verifique se o inimigo atingiu a borda
+            # Verifica se o inimigo atingiu a borda
             if x > 280:
                 y = enemy1.ycor()
                 y -= 20
@@ -84,7 +92,7 @@ class Enemy():
             x -= self.enemyspeed
             enemy2.setx(x)
 
-            # Verifique se o inimigo atingiu a borda
+            # Verifica se o inimigo atingiu a borda
             if x > 280:
                 y = enemy2.ycor()
                 y -= 20
@@ -101,7 +109,7 @@ class Enemy():
             x -= self.enemyspeed
             enemy3.setx(x)
 
-            # Verifique se o inimigo atingiu a borda
+            # Verifica se o inimigo atingiu a borda
             if x > 280:
                 y = enemy3.ycor()
                 y -= 20
