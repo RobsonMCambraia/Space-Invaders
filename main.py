@@ -43,18 +43,39 @@ player = {
     "heading": 90}
     
 jogador = Player(fogo, player)
-inimigo = Enemy()
+
+config_inimigo_1 = {
+    "quantidade": 8,
+    "caminho_shape": "src/inimigo-1.gif",
+    "x_random_1": -250,
+    "x_random_2": 250,
+    "y_random_1": 50,
+    "y_random_2": 120
+}
+config_inimigo_2 = {
+    "quantidade": 4,
+    "caminho_shape": "src/inimigo-2.gif",
+    "x_random_1": -250,
+    "x_random_2": 250,
+    "y_random_1": 150,
+    "y_random_2": 220
+}
+config_inimigo_3 = {
+    "quantidade": 2,
+    "caminho_shape": "src/inimigo-3.gif",
+    "x_random_1": -250,
+    "x_random_2": 250,
+    "y_random_1": 230,
+    "y_random_2": 280
+}
+
+inimigo = Enemy(config_inimigo_1, config_inimigo_2, config_inimigo_3)
 
 turtle.listen()
 
-#Inicialização dos inimigos
-inimigo.enemyListAppend()
-inimigo.enemyConfig("src/inimigo-1.gif", "src/inimigo-2.gif", "src/inimigo-3.gif")
-inimigo.enemyMove()
-
 # Configurar os ouvintes de eventos do teclado
-turtle.onkey(jogador.mover_esquerda(), "Left")
-turtle.onkey(jogador.mover_direita(), "Right")
-turtle.onkey(jogador.mover_fogo(), "space")
+turtle.onkey(jogador.mover_esquerda, "Left")
+turtle.onkey(jogador.mover_direita, "Right")
+turtle.onkey(jogador.mover_fogo, "space")
 
 turtle.done()

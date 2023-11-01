@@ -66,4 +66,3 @@ Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](L
 - Agradeça a quaisquer recursos, tutoriais ou bibliotecas que você usou para criar o jogo.
 
 Divirta-se jogando Space Invaders!
-```
