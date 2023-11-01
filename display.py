@@ -1,14 +1,17 @@
 import turtle
+
 class Display():
-    def __init__ (self, border_settings, placar_score):
+    def __init__(self, border_settings, placar_score):
+        # Recebe as configurações da borda e do placar
         self.border_settings = border_settings
         self.placar_setup = placar_score
         
+        # Chama as funções para desenhar a borda e exibir o placar
         self.desenharBorda()
         self.placarScore()
         
     def desenharBorda(self):
-        # Desenhar a borda
+        # Função para desenhar a borda
         border_pen = turtle.Turtle()
         border_pen.speed(self.border_settings["speed"])
         border_pen.color(self.border_settings["color"])
@@ -24,6 +27,7 @@ class Display():
         border_pen.hideturtle()
 
     def placarScore(self):
+        # Função para exibir o placar
         score_pen = turtle.Turtle()
         score = 0
         score_pen.speed(self.placar_setup["speed"])
