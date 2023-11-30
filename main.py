@@ -71,11 +71,13 @@ config_inimigo_3 = {
 
 inimigo = Enemy(config_inimigo_1, config_inimigo_2, config_inimigo_3)
 
-turtle.listen()
+while True:
+    inimigo.enemyMove()
+    turtle.listen()
 
-# Configurar os ouvintes de eventos do teclado
-turtle.onkey(jogador.mover_esquerda, "Left")
-turtle.onkey(jogador.mover_direita, "Right")
-turtle.onkey(jogador.mover_fogo, "space")
+    # Configurar os ouvintes de eventos do teclado
+    turtle.onkey(jogador.mover_esquerda, "Left")
+    turtle.onkey(jogador.mover_direita, "Right")
+    turtle.onkey(jogador.mover_fogo, "space")
 
 turtle.done()

@@ -20,7 +20,6 @@ class Enemy():
         self.number_of_enemies()
         self.enemyListAppend()
         self.enemyConfig()
-        self.enemyMove()
         
     def number_of_enemies(self):
         # Define a quantidade de inimigos para cada tipo com base nas configurações
