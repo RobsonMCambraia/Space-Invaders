@@ -16,6 +16,8 @@ class Enemy():
         self.enemies2 = []
         self.enemies3 = []
         
+        self.gameOver = False
+        
         # Inicia a criação dos inimigos
         self.number_of_enemies()
         self.enemyListAppend()
@@ -71,51 +73,50 @@ class Enemy():
         # Move os inimigos horizontalmente
         for enemy1 in self.enemies1:
             x = enemy1.xcor()
+            y = enemy1.ycor()
             x += self.enemyspeed
             enemy1.setx(x)
-
+                
             # Verifica se o inimigo atingiu a borda
             if x > 280:
-                y = enemy1.ycor()
                 y -= 20
                 enemy1.sety(y)
                 self.enemyspeed *= -1
             if x < -280:
-                y = enemy1.ycor()
                 y -= 20
                 enemy1.sety(y)
                 self.enemyspeed *= -1
+            
                 
         for enemy2 in self.enemies2:
             x = enemy2.xcor()
+            y = enemy2.ycor()
             x -= self.enemyspeed
             enemy2.setx(x)
-
+                
             # Verifica se o inimigo atingiu a borda
             if x > 280:
-                y = enemy2.ycor()
                 y -= 20
                 enemy2.sety(y)
                 self.enemyspeed *= -1
             if x < -280:
-                y = enemy2.ycor()
                 y -= 20
                 enemy2.sety(y)
                 self.enemyspeed *= -1
                 
+                            
         for enemy3 in self.enemies3:
             x = enemy3.xcor()
+            y = enemy3.ycor()
             x -= self.enemyspeed
             enemy3.setx(x)
-
+                
             # Verifica se o inimigo atingiu a borda
             if x > 280:
-                y = enemy3.ycor()
                 y -= 20
                 enemy3.sety(y)
                 self.enemyspeed *= -1
             if x < -280:
-                y = enemy3.ycor()
                 y -= 20
                 enemy3.sety(y)
                 self.enemyspeed *= -1

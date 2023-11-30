@@ -17,7 +17,7 @@ placar_score = {
     "speed": 0,
     "color": "red",
     "position_x": -290,
-    "position_y": 280}
+    "position_y": 270}
 
 display = Display(border_settings, placar_score)
 
@@ -79,5 +79,5 @@ while True:
     turtle.onkey(jogador.mover_esquerda, "Left")
     turtle.onkey(jogador.mover_direita, "Right")
     turtle.onkey(jogador.mover_fogo, "space")
-
+    
 turtle.done()
