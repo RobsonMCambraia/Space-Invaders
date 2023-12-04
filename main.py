@@ -19,7 +19,15 @@ placar_score = {
     "position_x": -290,
     "position_y": 280}
 
-display = Display(border_settings, placar_score)
+Game_over = {
+    "speed": 0,
+    "color": "red",
+    "position_x": 0,
+    "position_y": 0,
+    "texto": "Game Over",
+    "status": False}
+
+display = Display(border_settings, placar_score, Game_over)
 
 window = turtle.Screen()
 window.title("Space Invaders - Robson")
@@ -79,5 +87,8 @@ while True:
     turtle.onkey(jogador.mover_esquerda, "Left")
     turtle.onkey(jogador.mover_direita, "Right")
     turtle.onkey(jogador.mover_fogo, "space")
-
+    
+    if display.gameOver():
+        break
+    
 turtle.done()

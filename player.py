@@ -1,5 +1,6 @@
 import turtle
 import time
+import random
 
 class Player():
     def __init__(self, fogo, player):
@@ -46,24 +47,20 @@ class Player():
     # Função para mover o projétil disparado pelo jogador
     def mover_fogo(self):
         y = self.fogo.ycor()
+        x_fire = self.fogo.xcor()  # Obtém a posição horizontal do fogo
         while y < 300:
             y += self.fogospeed
             self.fogo.sety(y)
             time.sleep(0.01)
+            # Verifica se houve colisão entre o fogo e os inimigos
+            for inimigo in self.invaders:
+                x_ini = inimigo.xcor()
+                y_ini = inimigo.ycor()
+                if x_fire >= x_ini - 20 and x_fire <= x_ini + 20 and y >= y_ini:
+                    # Reposiciona o inimigo e o fogo e atualiza variáveis se houver colisão
+                    inimigo.setx(random.randint(-280, 280))
+                    inimigo.sety(random.randint(100, 250))
+                    y = 400  # Movendo o fogo para fora da tela
+                    self.fogospeed = 0  # Ou atribui um valor para parar o fogo
+                    break  # Para verificar colisão com apenas um inimigo por vez
         self.fogo.sety(-235)
-        
-    # Função para mover o jogador para a esquerda
-    def mover_esquerda(self):
-        x = self.player.xcor()
-        if x >= -250:
-            x -= self.playerspeed
-        self.player.setx(x)
-        self.fogo.setx(x)
-        
-    # Função para mover o jogador para a direita
-    def mover_direita(self):
-        x = self.player.xcor()
-        if x <= 250:
-            x += self.playerspeed
-        self.player.setx(x)
-        self.fogo.setx(x)
