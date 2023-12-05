@@ -17,9 +17,16 @@ placar_score = {
     "speed": 0,
     "color": "red",
     "position_x": -290,
-    "position_y": 280}
+    "position_y": 270}
 
-display = Display(border_settings, placar_score)
+game_over = {
+    "speed": 0,
+    "color": "red",
+    "position_x": 0,
+    "position_y": 0,
+    "text": "Game Over"}
+
+display = Display(border_settings, placar_score, game_over)
 
 window = turtle.Screen()
 window.title("Space Invaders - Robson")
@@ -71,13 +78,15 @@ config_inimigo_3 = {
 
 inimigo = Enemy(config_inimigo_1, config_inimigo_2, config_inimigo_3)
 
+turtle.listen()
+
+# Configurar os ouvintes de eventos do teclado
+turtle.onkey(jogador.mover_esquerda, "Left")
+turtle.onkey(jogador.mover_direita, "Right")
+turtle.onkey(jogador.mover_fogo, "space")
+
 while True:
     inimigo.enemyMove()
-    turtle.listen()
 
-    # Configurar os ouvintes de eventos do teclado
-    turtle.onkey(jogador.mover_esquerda, "Left")
-    turtle.onkey(jogador.mover_direita, "Right")
-    turtle.onkey(jogador.mover_fogo, "space")
 
 turtle.done()
