@@ -1,10 +1,11 @@
 import turtle
 
 class Display():
-    def __init__(self, border_settings, placar_score):
+    def __init__(self, border_settings, placar_score, game_over):
         # Recebe as configurações da borda e do placar
         self.border_settings = border_settings
         self.placar_setup = placar_score
+        self.Game_over = game_over
         
         # Chama as funções para desenhar a borda e exibir o placar
         self.desenharBorda()
@@ -37,3 +38,12 @@ class Display():
         scorestring = "SCORE: %s" % score
         score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
         score_pen.hideturtle()
+
+    def gameOver(self):
+        game_over = turtle.Turtle()
+        game_over.speed(self.Game_over["speed"])
+        game_over.color(self.Game_over["color"])
+        game_over.penup()
+        game_over.setposition(self.Game_over["position_x"], self.Game_over["position_y"])
+        game_over.write(self.Game_over["text"], False, align="center", font=("Arial", 30, "normal"))
+        game_over.hideturtle()
