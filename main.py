@@ -14,17 +14,21 @@ border_settings = {
     "size": 3}
 
 placar_score = {
+    "score": 0,
     "speed": 0,
     "color": "red",
     "position_x": -290,
     "position_y": 270}
+
+score = placar_score["score"]
+text_score_fim = f"Game over!\nScore:\t{score}"
 
 game_over = {
     "speed": 0,
     "color": "red",
     "position_x": 0,
     "position_y": 0,
-    "text": "Game Over"}
+    "text": text_score_fim}
 
 display = Display(border_settings, placar_score, game_over)
 
