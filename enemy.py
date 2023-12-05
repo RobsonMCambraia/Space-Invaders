@@ -72,15 +72,15 @@ class Enemy():
     def enemyMove(self):
         # Move os inimigos horizontalmente
         for enemy1 in self.enemies1:
-            x = enemy2.xcor()
-            y = enemy2.ycor()
+            x = enemy1.xcor()
+            y = enemy1.ycor()
             x -= self.enemyspeed
-            enemy2.setx(x)
+            enemy1.setx(x)
             
             # Verifica se o inimigo atingiu a borda
             if x > 280 or x < -280:
                 y -= 20
-                enemy2.sety(y)
+                enemy1.sety(y)
                 self.enemyspeed *= -1
             
                 

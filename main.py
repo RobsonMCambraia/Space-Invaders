@@ -91,4 +91,5 @@ turtle.onkey(jogador.mover_fogo, "space")
 
 while True:
     inimigo.enemyMove()
+    
 turtle.done()
