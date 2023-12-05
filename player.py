@@ -1,8 +1,10 @@
 import turtle
 import time
+from enemy import Enemy
+import random
 
 class Player():
-    def __init__(self, fogo, player):
+    def __init__(self, fogo, player, enemy):
         # Inicializa as tartarugas do jogador e do projétil
         self.fogo = turtle.Turtle()
         self.player = turtle.Turtle()
@@ -15,6 +17,7 @@ class Player():
         self.configuração_fogo = fogo
         self.configuração_player = player
         
+        self.enemy = enemy
         # Configura a aparência do jogador
         self.configPlayer()
         # Configura a aparência e posição inicial do projétil
@@ -45,11 +48,43 @@ class Player():
             
     # Função para mover o projétil disparado pelo jogador
     def mover_fogo(self):
-        y = self.fogo.ycor()
-        while y < 300:
-            y += self.fogospeed
-            self.fogo.sety(y)
+        x_fogo = self.fogo.xcor()
+        y_fogo = self.fogo.ycor()
+        while y_fogo < 300:
+            y_fogo += self.fogospeed
+            self.fogo.sety(y_fogo)
             time.sleep(0.01)
+            
+            for inimigo1 in self.enemy.enemies1:
+                x_ini = inimigo1.xcor()
+                y_ini = inimigo1.ycor()
+                if x_fogo >= x_ini - 20 and x_fogo <= x_ini + 20:
+                    if y_fogo >= y_ini:
+                        inimigo1.setx(random.randint(-280, 280))
+                        inimigo1.sety(random.randint(100, 250))
+                        y_fogo = 400
+                        break
+            for inimigo2 in self.enemy.enemies2:
+                x_ini = inimigo2.xcor()
+                y_ini = inimigo2.ycor()
+                if x_fogo >= x_ini - 20 and x_fogo <= x_ini + 20:
+                    if y_fogo >= y_ini:
+                        inimigo2.setx(random.randint(-280, 280))
+                        inimigo2.sety(random.randint(100, 250))
+                        y_fogo = 400
+                        break                      
+            for inimigo3 in self.enemy.enemies3:
+                x_ini = inimigo3.xcor()
+                y_ini = inimigo3.ycor()
+                if x_fogo >= x_ini - 20 and x_fogo <= x_ini + 20:
+                    if y_fogo >= y_ini:
+                        inimigo3.setx(random.randint(-280, 280))
+                        inimigo3.sety(random.randint(100, 250))
+                        y_fogo = 400
+                        break
+            y_fogo += self.fogospeed
+            self.fogo.sety(y_fogo)
+                                                                    
         self.fogo.sety(-235)
         
     # Função para mover o jogador para a esquerda

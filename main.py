@@ -53,7 +53,6 @@ player = {
     "caminho_shape": "src/nave-player.gif",
     "heading": 90}
     
-jogador = Player(fogo, player)
 
 config_inimigo_1 = {
     "quantidade": 8,
@@ -81,6 +80,7 @@ config_inimigo_3 = {
 }
 
 inimigo = Enemy(config_inimigo_1, config_inimigo_2, config_inimigo_3)
+jogador = Player(fogo, player, inimigo)
 
 turtle.listen()
 
